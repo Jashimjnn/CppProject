@@ -1,0 +1,1 @@
+{"name":"Local: hellof","url":"c:\\Users\\User\\CppProject\\hellof.cpp","tests":[{"id":1699368861926,"input":"2\n\n5\n5\n2\n7\n3\n8\n\n6\n7\n11\n2\n7\n3\n4","output":"YES\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\User\\CppProject\\hellof.cpp","group":"local","local":true}

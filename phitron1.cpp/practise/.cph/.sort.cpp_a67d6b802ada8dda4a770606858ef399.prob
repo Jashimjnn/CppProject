@@ -1,0 +1,1 @@
+{"name":"Local: sort","url":"d:\\CppProject\\phitron1.cpp\\practise\\sort.cpp","tests":[{"id":1700148866864,"input":"5\n1 2 3 4 5","output":"5 4 3 2 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\practise\\sort.cpp","group":"local","local":true}
