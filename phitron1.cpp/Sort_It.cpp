@@ -13,15 +13,14 @@ class Student
    int  id;
    int  math;
    int  Eng;
-   int TotalMarks;
 };
 bool cmp(Student a,Student b)
 {
-    if(a.TotalMarks>b.TotalMarks)
+    if(a.math+a.Eng > b.math+b.Eng)
     {
         return true;
     }
-    else if(a.TotalMarks<b.TotalMarks)
+    else if(a.math+a.Eng<b.math+b.Eng)
     {
         return false;
     }
@@ -38,7 +37,7 @@ int main()
     for(int i=0;i<n;i++)
     {
         cin>>ar[i].name>>ar[i].cls>>ar[i].ch>>ar[i].id>>ar[i].math>>ar[i].Eng;
-        ar[i].TotalMarks=ar[i].math+ar[i].Eng;
+        
     }
     sort(ar,ar+n,cmp);
     for(int  i=0;i<n;i++)
