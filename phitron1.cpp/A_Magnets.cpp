@@ -8,25 +8,23 @@ int main()
 {
     int n;
     cin>>n;
+    int  mx=0;
+    int cnt=0,cnt1=0;
     int ar[n];
-    int sum=0,sum1=0;
-    for(int i=0;i<n;i++)
+    set<int>s;
+    for(int  i=0;i<n;i++)
     {
         cin>>ar[i];
-        sum+=ar[i];
+        
     }
-    sum=sum/2;
-    sort(ar,ar+n);
-    int cnt=0;
-    for(int  i=n-1;i>=0;i--)
+    for(int  i=0;i<n-1;i++)
     {
-        sum1+=ar[i];
-         cnt++;
-        if(sum1>sum)
+        cin>>ar[i];
+        if(ar[i]!=ar[i+1])
         {
-            break;
+            cnt++;
         }
     }
-    cout<<cnt<<endl;
+    cout<<cnt+1<<endl;
     return 0;
 }

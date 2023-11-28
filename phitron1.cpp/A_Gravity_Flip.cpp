@@ -9,24 +9,15 @@ int main()
     int n;
     cin>>n;
     int ar[n];
-    int sum=0,sum1=0;
     for(int i=0;i<n;i++)
     {
         cin>>ar[i];
-        sum+=ar[i];
     }
-    sum=sum/2;
     sort(ar,ar+n);
-    int cnt=0;
-    for(int  i=n-1;i>=0;i--)
+    for(int i=0;i<n;i++)
     {
-        sum1+=ar[i];
-         cnt++;
-        if(sum1>sum)
-        {
-            break;
-        }
+        cout<<ar[i]<<" ";
     }
-    cout<<cnt<<endl;
+    cout<<endl;
     return 0;
 }
