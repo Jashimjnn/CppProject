@@ -1,0 +1,1 @@
+{"name":"Local: pract2","url":"d:\\CppProject\\phitron1.cpp\\module05\\Practise\\pract2.cpp","tests":[{"id":1701952077472,"input":"5 4 8 6 2 1 -1","output":"NO"},{"id":1701952093263,"input":"2 4 5 6 7 4 -1","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\module05\\Practise\\pract2.cpp","group":"local","local":true}
