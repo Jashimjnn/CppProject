@@ -15,9 +15,9 @@ public:
         this->next = NULL;
     }
 };
-void insertTail(Node *&head, Node  *&tail,int v)
+void insertTail(Node *&head,Node *&tail,int v)
 {
-    Node* nd = new Node(v);
+    Node *nd = new Node(v);
     if(head==NULL)
     {
         head=nd;
@@ -27,15 +27,15 @@ void insertTail(Node *&head, Node  *&tail,int v)
     tail->next=nd;
     tail=nd;
 }
-void removeElement(Node* head)
+void removeElement(Node *head)
 {
     for(Node* i=head;i!=NULL;i=i->next)
     {
-        for(Node* j=i;j->next!=NULL;)
+        for(Node * j=i;j->next!=NULL;)
         {
             if(i->val==j->next->val)
             {
-               j->next=j->next->next;
+                j->next=j->next->next;
             }
             else
             {
@@ -46,8 +46,8 @@ void removeElement(Node* head)
 }
 int main()
 {
-    Node* head = NULL;
-    Node* tail = NULL;
+    Node* head  = NULL;
+    Node* tail  = NULL;
     while(true)
     {
         int x;
