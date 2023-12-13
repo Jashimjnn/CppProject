@@ -6,22 +6,35 @@ typedef long long ll;
 #define N cout << "NO" << endl;
 int main()
 {
+    
     string str;
-    cin >> str;
-    string tmp = "WUB";
+    cin>>str;
+
+    string tmp="";
+
     for (int i = 0; i < str.size(); i++)
     {
-        int x = str.find(tmp);
-        if (x == -1)
+        if (str.substr(i, 3) == "WUB")
         {
-            break;
+
+            i += 2;
         }
         else
         {
-            str.replace(x, 3, " ");
+
+            while (i < str.size() && str.substr(i, 3) != "WUB")
+            {
+                tmp += str[i];
+                i++;
+            }
+
+            if (i < str.size())
+            {
+                tmp += ' ';
+            }
+            i--;
         }
     }
-    cout << str << endl;
-
+    cout << tmp << endl;
     return 0;
 }

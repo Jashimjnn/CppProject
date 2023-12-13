@@ -56,18 +56,28 @@ void deleteAnyPosition(Node *head, int pos)
     tmp->next->prev = tmp;
     delete dnd;
 }
-void deleteTail(Node *&tail)
+void deleteTail(Node *&head,Node *&tail)
 {
     Node *dnd=tail;
     tail=tail->prev;
     delete dnd;
+    if(tail==NULL)
+    {
+        head=NULL;
+        return;
+    }
     tail->next=NULL;
 }
-void deleteHead(Node *&head)
+void deleteHead(Node *&head,Node *&tail)
 {
     Node * dnd = head;
     head=head->next;
     delete dnd;
+    if(head==NULL)
+    {
+        tail=NULL;
+        return;
+    }
     head->prev=NULL;
 }
 int main()
@@ -92,11 +102,11 @@ int main()
     cin >> pos;
     if(pos==0)
     {
-     deleteHead(head);
+     deleteHead(head,tail);
     }
     else if(pos==sz(head)-1)
     {
-      deleteTail(tail);
+      deleteTail(head,tail);
     }
     else if(pos>=sz(head))
     {
