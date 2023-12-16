@@ -20,7 +20,7 @@ public:
 void insertTail(Node *&head, Node *&tail, int v)
 {
     Node *nd = new Node(v);
-    if (tail == NULL)
+    if (head == NULL)
     {
         head = nd;
         tail = nd;
@@ -28,21 +28,14 @@ void insertTail(Node *&head, Node *&tail, int v)
     }
     tail->next = nd;
     nd->prev = tail;
-    tail = tail->next;
-}
-void printNormal(Node *head)
-{
-    for (Node *i = head; i != NULL; i = i->next)
-    {
-        cout << i->val << " ";
-    }
-    cout << endl;
+    tail = nd;
 }
 int main()
 {
-     Node *head = NULL;
+    Node *head = NULL;
     Node *tail = NULL;
-    int sz1;
+    Node *head1 = NULL;
+    Node * tail1 = NULL;
     while (true)
     {
         int x;
@@ -52,18 +45,24 @@ int main()
             break;
         }
         insertTail(head, tail, x);
-        //sz1 = fun(head);
     }
-    for(Node *i=head;i->next!=NULL;i=i->next)
+    bool flag = false;
+    Node *i;
+    Node *j;
+    for (i = head, j = tail; i != NULL; i = i->next, j = j->prev)
     {
-        for(Node *j=i->next;j!=NULL;j=j->next)
+        if (i->val != j->val)
         {
-            if(i->val>j->val)
-            {
-                swap(i->val,j->val);
-            }
+            flag = true;
         }
     }
-    printNormal(head);
+    if (flag == true)
+    {
+        cout << "NO" << endl;
+    }
+    else
+    {
+        cout << "YES" << endl;
+    }
     return 0;
 }
