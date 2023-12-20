@@ -1,0 +1,1 @@
+{"name":"Local: practise4","url":"d:\\CppProject\\phitron1.cpp\\Qeuee\\practise4.cpp","tests":[{"id":1702917503169,"input":"5\n10 20 30 40 50","output":"50 40 30 20 10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Qeuee\\practise4.cpp","group":"local","local":true}
