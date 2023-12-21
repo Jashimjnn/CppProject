@@ -4,7 +4,7 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
-vector<int>nextEl(vector<int> &nums)
+vector<int>nextElement(vector<int> &nums)
 {
     stack<int>st;
     vector<int> res(nums.size(),-1);
@@ -31,7 +31,7 @@ int main()
         cin>>x;
         v.push_back(x);
     }
-    vector<int> res = nextEl(v);
+    vector<int> res = nextElement(v);
     for(int i:res)
     {
         cout<<i<<" ";
