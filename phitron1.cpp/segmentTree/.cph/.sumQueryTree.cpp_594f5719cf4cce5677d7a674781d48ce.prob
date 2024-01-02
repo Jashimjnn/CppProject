@@ -1,0 +1,1 @@
+{"name":"Local: sumQueryTree","url":"d:\\CppProject\\phitron1.cpp\\segmentTree\\sumQueryTree.cpp","tests":[{"id":1704095513339,"input":"8\n5 3 2 4 1 8 6 10\n1\n1 5\n-1","output":"18"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\segmentTree\\sumQueryTree.cpp","group":"local","local":true}

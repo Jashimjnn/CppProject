@@ -1,0 +1,1 @@
+{"name":"Local: howManyMinimum","url":"d:\\CppProject\\phitron1.cpp\\segmentTree\\howManyMinimum.cpp","tests":[{"id":1704095201061,"input":"5 5\n3 4 3 5 2\n2 0 3\n1 1 2\n2 0 3\n1 0 2\n2 0 5","output":"3 2\n2 1\n2 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\segmentTree\\howManyMinimum.cpp","group":"local","local":true}
