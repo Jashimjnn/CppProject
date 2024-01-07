@@ -1,0 +1,1 @@
+{"name":"Local: ConvertArrayToBst","url":"d:\\CppProject\\phitron1.cpp\\BinarySearchTree\\ConvertArrayToBst.cpp","tests":[{"id":1704640793485,"input":"6\n2 5 8 12 15 18","output":"8 2 15 5 12 18"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\BinarySearchTree\\ConvertArrayToBst.cpp","group":"local","local":true}
