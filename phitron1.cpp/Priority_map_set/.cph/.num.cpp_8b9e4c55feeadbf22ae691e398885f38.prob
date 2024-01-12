@@ -1,0 +1,1 @@
+{"name":"Local: num","url":"d:\\CppProject\\phitron1.cpp\\Priority_map_set\\num.cpp","tests":[{"id":1705067122444,"input":"2 1\n1 3\n2","output":"2.00000"},{"id":1705067161655,"input":"2 2\n1 2\n3 4","output":"2.50000"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Priority_map_set\\num.cpp","group":"local","local":true}

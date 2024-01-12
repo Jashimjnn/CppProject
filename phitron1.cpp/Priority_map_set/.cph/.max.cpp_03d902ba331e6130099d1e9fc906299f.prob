@@ -1,0 +1,1 @@
+{"name":"Local: max","url":"d:\\CppProject\\phitron1.cpp\\Priority_map_set\\max.cpp","tests":[{"id":1705052725957,"input":"6\n2 3 1 6 7 6","output":"25 7 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Priority_map_set\\max.cpp","group":"local","local":true}
