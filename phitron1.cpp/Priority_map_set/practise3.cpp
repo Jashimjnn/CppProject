@@ -4,22 +4,20 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
-
 int main()
 {
-    int t;
-    cin >> t;
+    int n;
+    cin >> n;
     cin.ignore();
-
-    while (t--)
+    while (n--)
     {
         string str;
         getline(cin, str);
-        map<string, int> mp;
         stringstream ss(str);
+        map<string, int> mp;
         string word;
-        int mx = 0, cnt = 0;
         string tmp;
+        int mx = 0, cnt = 0;
         while (ss >> word)
         {
             mp[word]++;
@@ -32,6 +30,5 @@ int main()
         }
         cout << tmp << " " << mp[tmp] << endl;
     }
-
     return 0;
 }

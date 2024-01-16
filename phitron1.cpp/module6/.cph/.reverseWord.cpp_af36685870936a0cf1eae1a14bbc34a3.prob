@@ -1,0 +1,1 @@
+{"name":"Local: reverseWord","url":"d:\\CppProject\\phitron1.cpp\\module6\\reverseWord.cpp","tests":[{"id":1705243039915,"input":"Md Jashim Uddin","output":"Uddin Jashim Md"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\module6\\reverseWord.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: problem11","url":"d:\\CppProject\\phitron1.cpp\\ExamProblems\\problem11.cpp","tests":[{"id":1705411111187,"input":"5\n1 4 2 5 3","output":"2 1"},{"id":1705411146111,"input":"4\n6 9 12 15","output":"2 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\ExamProblems\\problem11.cpp","group":"local","local":true}

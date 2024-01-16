@@ -1,5 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
+#include<string.h>
 using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;

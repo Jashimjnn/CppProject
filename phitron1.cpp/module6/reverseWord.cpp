@@ -10,7 +10,7 @@ void print(stringstream& ss)
     if(ss>>word)
     {
         print(ss);
-        cout<<word<<endl;
+        cout<<word<<" ";
     }
 }
 int main()
