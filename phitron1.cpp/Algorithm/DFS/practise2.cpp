@@ -15,15 +15,15 @@ void bfs(int src)
     level[src]=0;
     while(!q.empty())
     {
-        int fr=q.front();
+        int pr=q.front();
         q.pop();
-        for(int child:v[fr])
+        for(int child:v[pr])
         {
             if(vis[child]==false)
             {
                 q.push(child);
                 vis[child]=true;
-                level[child]=level[fr]+1;
+                level[child]=level[pr]+1;
             }
         }
     }
@@ -39,10 +39,10 @@ int main()
         v[a].push_back(b);
         v[b].push_back(a);
     }
-    int l;
-    cin>>l;
     memset(vis,false,sizeof(vis));
     memset(level,-1,sizeof(level));
+    int l;
+    cin>>l;
     bfs(0);
     vector<int>path;
     for(int i=0;i<n;i++)

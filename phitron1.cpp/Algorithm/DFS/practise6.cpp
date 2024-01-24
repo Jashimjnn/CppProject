@@ -6,25 +6,16 @@ typedef long long ll;
 #define N cout << "NO" << endl;
 vector<int>v[1005];
 bool vis[1005];
-int level[1005];
-void bfs(int src)
+vector<int>v1;
+void dfs(int src)
 {
-    queue<int>q;
-    q.push(src);
+    v1.push_back(src);
     vis[src]=true;
-    level[src]=0;
-    while(!q.empty())
+    for(int child :v[src])
     {
-        int fr=q.front();
-        q.pop();
-        for(int child:v[fr])
+        if(vis[child]==false)
         {
-            if(vis[child]==false)
-            {
-                q.push(child);
-                vis[child]=true;
-                level[child]=level[fr]+1;
-            }
+            dfs(child);
         }
     }
 }
@@ -39,21 +30,22 @@ int main()
         v[a].push_back(b);
         v[b].push_back(a);
     }
-    int l;
-    cin>>l;
     memset(vis,false,sizeof(vis));
-    memset(level,-1,sizeof(level));
-    bfs(0);
-    vector<int>path;
+    int cnt=0;
+    vector<int>p;
     for(int i=0;i<n;i++)
     {
-        if(level[i]==l)
+        if(vis[i]==false)
         {
-            path.push_back(i);
+            dfs(i);
+            int x = v1.size();
+            p.push_back(x);
+            cnt++;
+            v1.clear();
         }
     }
-    reverse(path.begin(),path.end());
-    for(auto x:path)
+    sort(p.begin(),p.end());
+    for(auto x:p)
     {
         cout<<x<<" ";
     }
