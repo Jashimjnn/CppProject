@@ -4,7 +4,22 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
-vector<int>v[1005];
+const int X = 1e5 + 5;
+vector<int> v[X];
+bool vis[X];
+vector<int>v1;
+void dfs(int src)
+{
+    v1.push_back(src);
+    vis[src]=true;
+    for(int child : v[src])
+    {
+        if(vis[child]==false)
+        {
+            dfs(child);
+        }
+    }
+}
 int main()
 {
     int n,e;
@@ -16,10 +31,9 @@ int main()
         v[a].push_back(b);
         v[b].push_back(a);
     }
-    int nd;
-    cin>>nd;
-    cout<<v[nd].size()<<endl;
-    for(auto x:v[nd])
+    memset(vis,false,sizeof(vis));
+    dfs(0);
+    for(auto x:v1)
     {
         cout<<x<<" ";
     }
