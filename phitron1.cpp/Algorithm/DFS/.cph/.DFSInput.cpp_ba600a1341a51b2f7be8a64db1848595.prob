@@ -1,0 +1,1 @@
+{"name":"Local: DFSInput","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DFS\\DFSInput.cpp","tests":[{"id":1706888893516,"input":"7 8\n6 0\n0 1\n1 4\n1 3\n1 2\n4 3\n3 5\n5 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DFS\\DFSInput.cpp","group":"local","local":true}
