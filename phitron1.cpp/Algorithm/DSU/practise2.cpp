@@ -5,29 +5,26 @@ typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
 const int X = 1e5+5;
-vector<int>adj[X];
+vector<int>v[X];
 bool vis[X];
-bool flag = false;
-int par[X];
+int level[X];
 void bfs(int src)
 {
     queue<int>q;
     q.push(src);
     vis[src]=true;
+    level[src]=0;
     while(!q.empty())
     {
         int fr = q.front();
         q.pop();
-        for(int child : adj[fr])
+        for(int child : v[fr])
         {
-            if(vis[child]==true && par[child]!=child)
+            if(!vis[child])
             {
-                flag=true;
-            }
-            if(!vis[src])
-            {
-                q.push(src);
-                vis[src]=true;
+                q.push(child);
+                vis[child]=true;
+                level[child]=level[fr]+1;
             }
         }
     }
@@ -40,25 +37,26 @@ int main()
     {
         int a,b;
         cin>>a>>b;
-        adj[a].push_back(b);
-        adj[b].push_back(a);
+        v[a].push_back(b);
+        v[b].push_back(a);
     }
     memset(vis,false,sizeof(vis));
-    memset(par,-1,sizeof(par));
+    memset(level,-1,sizeof(level));
+    int src;
+    cin>>src;
+    bfs(0);
+    vector<int>path;
     for(int i=0;i<n;i++)
     {
-        if(!vis[i])
+        if(level[i]==src)
         {
-            bfs(i);
+            path.push_back(i);
         }
     }
-    if(flag)
+    reverse(path.begin(),path.end());
+    for(auto x:path)
     {
-        cout<<"Cycle Found"<<endl;
-    }
-    else
-    {
-        cout<<"Cycle Not Found"<<endl;
+        cout<<x<<" ";
     }
     return 0;
 }

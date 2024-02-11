@@ -14,14 +14,13 @@ void dfs(int src)
     vis[src]=true;
     for(int child : adj[src])
     {
-        if(vis[child]==true && par[child]!=src)
+        if(vis[child]==true && par[child]!=child)
         {
             flag = true;
         }
         if(!vis[child])
         {
             vis[child]=true;
-            par[child]=src;
             dfs(child);
         }
     }
@@ -34,7 +33,7 @@ int main()
     {
         int a,b;
         cin>>a>>b;
-        adj[a].push_back(a);
+        adj[a].push_back(b);
         adj[b].push_back(a);
     }
     memset(vis,false,sizeof(vis));
