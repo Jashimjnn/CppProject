@@ -1,0 +1,1 @@
+{"name":"Local: AdjToMatrix","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\AdjToMatrix.cpp","tests":[{"id":1707830406942,"input":"4 4\n1 0\n0 2\n0 3\n2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\AdjToMatrix.cpp","group":"local","local":true}

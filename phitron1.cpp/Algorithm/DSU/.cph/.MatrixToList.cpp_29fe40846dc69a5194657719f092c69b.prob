@@ -1,0 +1,1 @@
+{"name":"Local: MatrixToList","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\MatrixToList.cpp","tests":[{"id":1707833860932,"input":"4\n0 5 -1 -1\n-1 0 6 -1\n-1 -1 0 7\n-1 8 7 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\MatrixToList.cpp","group":"local","local":true}
