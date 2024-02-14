@@ -4,67 +4,79 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
-const int X = 1e6 + 5;
-vector<int> v[X];
-bool vis[X];
-int level[X];
+const int X = 1e5 + 5;
 int parent[X];
-void bfs(int src)
+int group_size[X];
+void dsu_initialize(int n)
 {
-	queue<int> q;
-	q.push(src);
-	vis[src] = true;
-	level[src] = 0;
-	while (!q.empty())
-	{
-		int pr = q.front();
-		q.pop();
-		for (int child : v[pr])
-		{
-			if (vis[child] == false)
-			{
-				q.push(child);
-				vis[child] = true;
-				level[child] = level[pr] + 1;
-				parent[child] = pr;
-			}
-		}
-	}
+    for (int i = 1; i <= n; i++)
+    {
+        parent[i] = -1;
+        group_size[i] = 1;
+    }
 }
+int dsu_find(int node)
+{
+    if (parent[node] == -1)
+        return node;
+    int leader = dsu_find(parent[node]);
+    parent[node] = leader;
+    return leader;
+}
+void dsu_union_by_size(int node1, int node2)
+{
+    int leaderA = dsu_find(node1);
+    int leaderB = dsu_find(node2);
+    if (group_size[leaderA] > group_size[leaderB])
+    {
+        parent[leaderB] = leaderA;
+        group_size[leaderA] += group_size[leaderB];
+    }
+    else
+    {
+        parent[leaderA] = leaderB;
+        group_size[leaderB] += group_size[leaderA];
+    }
+}
+
 int main()
 {
-	int n, e;
-	cin >> n >> e;
-	while (e--)
+    int n;
+    cin >>n;
+    dsu_initialize(n);
+	vector<pair<int,int>>bad;
+	vector<pair<int,int>>create;
+    for(int i=1;i<=n-1;i++)
 	{
-		int a, b;
-		cin >> a >> b;
-		v[a].push_back(b);
-		v[b].push_back(a);
-	}
-	memset(vis, false, sizeof(vis));
-	memset(level, -1, sizeof(level));
-	memset(parent, -1, sizeof(parent));
-	bfs(1);
-	int x = n;
-	vector<int> v1;
-	while (x != -1)
-	{
-		v1.push_back(x);
-		x = parent[x];
-	}
-	reverse(v1.begin(), v1.end());
-	if (v1.size() == 1)
-	{
-		cout << "IMPOSSIBLE" << endl;
-	}
-	else
-	{
-		cout << v1.size() << endl;
-		for (auto va : v1)
+		int a,b;
+		cin>>a>>b;
+		int leaderA = dsu_find(a);
+		int leaderB = dsu_find(b);
+		if(leaderA==leaderB)
 		{
-			cout << va << " ";
+			bad.push_back({a,b});
+		}
+		else
+		{
+			dsu_union_by_size(a,b);
 		}
 	}
-	return 0;
+	cout<<bad.size()<<endl;
+	for(int i=2;i<=n;i++)
+	{
+		int leaderA = dsu_find(1);
+		int leaderB = dsu_find(i);
+		if(leaderA!=leaderB)
+		{
+			create.push_back({1,i});
+			dsu_union_by_size(1,i);
+		}
+	}
+	for(int i=0;i<bad.size();i++)
+	{
+		cout<<bad[i].first<<" "<<bad[i].second<<" ";
+		cout<<create[i].first<<" "<<create[i].second<<endl;
+	}
+    
+    return 0;
 }
