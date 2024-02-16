@@ -1,69 +1,57 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-#define Y cout << "YES" << endl;
-#define N cout << "NO" << endl;
-const int X = 60;
-vector<int> adj[X];
-bool vis[X];
-int par[X];
-bool flag = false;
-
-void dfs(int src, int parent)
+const int N = 1e5 + 5;
+bool vis[N];
+bool pathVisit[N];
+vector<int> adj[N];
+bool ans;
+void dfs(int parent)
 {
-    vis[src] = true;
-    par[src] = parent;
-    for (int child : adj[src])
+    vis[parent] = true;
+    pathVisit[parent] = true;
+    for (int child : adj[parent])
     {
+        if (pathVisit[child])
+        {
+            ans = true;
+        }
         if (!vis[child])
         {
-            dfs(child, src);
-        }
-        else if (par[child] != child)
-        {
-            flag = true;
+            dfs(child);
         }
     }
+    // kaj sesh
+    pathVisit[parent] = false;
 }
-
 int main()
 {
     int n;
     cin >> n;
-
     int mat[n][n];
-    for (int i = 0; i < n; i++)
+    for(int i=0;i<n;i++)
     {
-        for (int j = 0; j < n; j++)
+        for(int j=0;j<n;j++)
         {
-            cin >> mat[i][j];
-            if (mat[i][j] == 1 && i != j)
+            cin>>mat[i][j];
+            if(mat[i][j]==1 && i!=j)
             {
                 adj[i].push_back(j);
             }
         }
     }
-
     memset(vis, false, sizeof(vis));
-    //memset(par, -1, sizeof(par));
-
-    for (int i = 1; i <= n; i++)
+    memset(pathVisit, false, sizeof(pathVisit));
+    ans = false;
+    for (int i = 0; i < n; i++)
     {
         if (!vis[i])
         {
-            dfs(i, -1);
+            dfs(i);
         }
     }
-
-    if (flag)
-    {
-        cout << "1"<<endl;
-    }
+    if (ans)
+        cout << "1";
     else
-    {
-        cout << "0"<<endl;
-    }
-
+        cout << "0";
     return 0;
 }
