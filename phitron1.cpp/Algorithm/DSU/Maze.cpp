@@ -39,7 +39,6 @@ void bfs(pair<int, int> src)
         }
     }
 }
-
 int main()
 {
     cin >> n >> m;

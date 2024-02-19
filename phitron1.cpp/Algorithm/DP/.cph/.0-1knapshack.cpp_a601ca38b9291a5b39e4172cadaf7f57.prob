@@ -1,0 +1,1 @@
+{"name":"Local: 0-1knapshack","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DP\\0-1knapshack.cpp","tests":[{"id":1708266291701,"input":"4\n2 3 4 5\n1 3 5 3\n8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DP\\0-1knapshack.cpp","group":"local","local":true}
