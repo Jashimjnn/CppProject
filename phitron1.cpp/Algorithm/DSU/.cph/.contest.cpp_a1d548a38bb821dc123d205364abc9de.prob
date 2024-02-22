@@ -1,0 +1,1 @@
+{"name":"Local: contest","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\contest.cpp","tests":[{"id":1708361434490,"input":"2\n10 0 165\n10 10 1","output":"Case 1: Yes\nCase 2: Yes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\contest.cpp","group":"local","local":true}

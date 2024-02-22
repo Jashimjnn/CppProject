@@ -1,3 +1,8 @@
+/**
+ * Author     : Sayed
+ * From       : RMSTU(CSE)
+ * Created on : 2024-02-19 11:36:52
+ **/
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
