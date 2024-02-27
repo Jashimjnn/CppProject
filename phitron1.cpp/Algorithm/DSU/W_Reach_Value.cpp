@@ -4,44 +4,43 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
-const ll X = 1e12;
-bool display(ll x, ll y)
+map<long long int, bool> mp;
+bool knapsack(long long int initial, long long int n)
 {
-
-    if (x == y)
+    if (initial == n)
     {
         return true;
     }
-    if (x > y)
+    if (initial > n)
     {
         return false;
     }
-    if (display(x * 10, y))
+    if (mp.find(initial) != mp.end())
     {
-        return true;
+        return mp[initial];
     }
-    if (display(x * 20, y))
-    {
-        return true;
-    }
-    return false;
+    bool op1 = knapsack(initial * 10, n);
+    bool op2 = knapsack(initial * 20, n);
+    return mp[initial] = op1 || op2;
+    // return op1  op2;
 }
 int main()
 {
-    ll t;
+    int t;
     cin >> t;
     while (t--)
     {
-        ll n;
+        long long int n;
         cin >> n;
-        bool flag = display(1, n);
-        if (flag == true)
+        mp.clear();
+        bool val = knapsack(1, n);
+        if (val == true)
         {
-            Y;
+            cout << "YES" << endl;
         }
         else
         {
-            N;
+            cout << "NO" << endl;
         }
     }
     return 0;
