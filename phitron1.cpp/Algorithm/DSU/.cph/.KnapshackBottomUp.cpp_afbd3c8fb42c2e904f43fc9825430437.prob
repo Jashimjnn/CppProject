@@ -1,0 +1,1 @@
+{"name":"Local: KnapshackBottomUp","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\KnapshackBottomUp.cpp","tests":[{"id":1709138993386,"input":"2 3 4 5\n1 3 5 3\n10","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\DSU\\KnapshackBottomUp.cpp","group":"local","local":true}
