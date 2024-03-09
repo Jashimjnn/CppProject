@@ -1,0 +1,1 @@
+{"name":"Local: LcsTopDown","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\RecapAlgorithm\\LcsTopDown.cpp","tests":[{"id":1709734766090,"input":"abcdfgr\nacfdgr","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\RecapAlgorithm\\LcsTopDown.cpp","group":"local","local":true}

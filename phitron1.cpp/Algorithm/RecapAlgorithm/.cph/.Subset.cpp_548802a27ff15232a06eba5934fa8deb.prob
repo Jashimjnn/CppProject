@@ -1,0 +1,1 @@
+{"name":"Local: Subset","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\RecapAlgorithm\\Subset.cpp","tests":[{"id":1709999878896,"input":"1\n5 3\n1 2 3 4 5","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\RecapAlgorithm\\Subset.cpp","group":"local","local":true}
