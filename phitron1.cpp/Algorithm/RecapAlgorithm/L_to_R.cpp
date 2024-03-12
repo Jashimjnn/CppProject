@@ -1,80 +1,42 @@
+#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-
+typedef long long ll;
+#define Y cout << "YES" << endl;
+#define N cout << "NO" << endl;
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
-    long long int N;
-    cin >> N;
-
-    vector<long long int> arr(N);
-    vector<int> zeroIdx;
-    for (long long int i = 0; i < N; i++)
+    ll n;
+    cin >> n;
+    vector<ll> v(n), v1;
+    ll sum=0;
+    for (ll i = 0; i < n; i++)
     {
-        cin >> arr[i];
-        if (arr[i] == 0)
-        {
-            zeroIdx.push_back(i);
-        }
+        cin >> v[i];
+        sum+=v[i];
+        v1.push_back(sum);
     }
-
-    vector<long long int> prefix(N);
-    prefix[0] = arr[0];
-    for (long long int i = 1; i < N; i++)
+    ll q;
+    cin >> q;
+    while (q--)
     {
-        if (arr[i] == 0)
+        ll l, r;
+        cin >> l >> r;
+        l--;
+        r--;
+        if (v[l] == 0 or v[r] == 0)
         {
-            prefix[i] = prefix[i - 1];
+            cout << "0\n";
+        }
+        else if((r-l)!=(v1[r]-v1[l]))
+        {
+            cout<<"0\n";
         }
         else
         {
-            prefix[i] = prefix[i - 1] * arr[i];
+            cout << "1\n";
         }
     }
-
-    long long int Q;
-    cin >> Q;
-
-    while (Q--)
-    {
-        long long int L, R;
-        cin >> L >> R;
-        L--;
-        R--;
-
-        long long result;
-        bool Zero = false;
-        for (int index : zeroIdx)
-        {
-            if (index >= L && index <= R)
-            {
-                Zero = true;
-                break;
-            }
-        }
-
-        if (Zero)
-        {
-            cout << 0 << "\n";
-        }
-        else
-        {
-            if (L == 0)
-            {
-                cout << prefix[R] << "\n";
-            }
-            else
-            {
-                if (prefix[L - 1] != 0)
-                {
-                    result = prefix[R] / prefix[L - 1];
-                    cout << result << "\n";
-                }
-            }
-        }
-    }
-
-    return 0;
 }

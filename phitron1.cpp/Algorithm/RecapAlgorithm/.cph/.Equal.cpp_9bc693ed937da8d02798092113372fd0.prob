@@ -1,0 +1,1 @@
+{"name":"Local: Equal","url":"d:\\CppProject\\phitron1.cpp\\Algorithm\\RecapAlgorithm\\Equal.cpp","tests":[{"id":1710164195669,"input":"2\n1 2 3 4\n1 2 1 2","output":"Not Equal\nEqual"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\phitron1.cpp\\Algorithm\\RecapAlgorithm\\Equal.cpp","group":"local","local":true}
