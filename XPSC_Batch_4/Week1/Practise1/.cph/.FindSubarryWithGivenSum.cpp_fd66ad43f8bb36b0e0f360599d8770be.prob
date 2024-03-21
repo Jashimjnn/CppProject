@@ -1,0 +1,1 @@
+{"name":"Local: FindSubarryWithGivenSum","url":"d:\\CppProject\\XPSC_Batch_4\\Week1\\Practise1\\FindSubarryWithGivenSum.cpp","tests":[{"id":1711004778873,"input":"6\n1 4 20 3 10 5\n33","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week1\\Practise1\\FindSubarryWithGivenSum.cpp","group":"local","local":true}

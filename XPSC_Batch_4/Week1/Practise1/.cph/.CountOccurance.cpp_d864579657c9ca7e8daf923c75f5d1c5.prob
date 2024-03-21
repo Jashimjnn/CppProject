@@ -1,0 +1,1 @@
+{"name":"Local: CountOccurance","url":"d:\\CppProject\\XPSC_Batch_4\\Week1\\Practise1\\CountOccurance.cpp","tests":[{"id":1711014877272,"input":"forxxorfxdofr\nfor","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week1\\Practise1\\CountOccurance.cpp","group":"local","local":true}
