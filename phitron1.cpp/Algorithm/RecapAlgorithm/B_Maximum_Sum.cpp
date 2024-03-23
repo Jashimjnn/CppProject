@@ -17,16 +17,38 @@ int main()
         for(int i=0;i<n;i++)
         {
             cin>>v[i];
+            //sum1+=v[i];
         }
         ll sum=0;
+        ll mx = INT_MIN;
         for(int i=0;i<n;i++)
         {
-            for(int j=0;j<k;j++)
+            sum+=v[i];
+            mx = max(mx,sum);
+            if(sum<0)
             {
-                sum+=v[i];
+                sum=0;
             }
         }
-        cout<<(sum%m)<<endl;
+        sum = mx;
+        ll sum1=accumulate(v.begin(),v.end(),(ll)0);
+        while(k--)
+        {
+            if(sum>0)
+            {
+                sum1+=sum;
+                sum = 2*sum;
+            }
+        }
+        ll m=1000000007;
+        if(sum1>0)
+        {
+            cout<<(sum1%m)<<endl;
+        }
+        else
+        {
+            cout<<(sum1)<<endl;
+        }
     }
     return 0;
 }
