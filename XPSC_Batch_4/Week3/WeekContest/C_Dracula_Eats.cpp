@@ -17,12 +17,12 @@ int main()
         bool flag = true;
         while (n--)
         {
-            if (x == true)
+            if (x == flag)
             {
                 cnt++;
             }
-
-            x = (x + 1) % 7;
+            x++;
+            x %= 7;
         }
         cout << cnt << endl;
     }

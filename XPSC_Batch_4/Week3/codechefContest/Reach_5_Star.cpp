@@ -8,6 +8,13 @@ int main()
 {
     ll x,y;
     cin>>x>>y;
-    cout<<7-(x+y)<<endl;
+    if((x+y)>=2000)
+    {
+        Y;
+    }
+    else
+    {
+        N;
+    }
     return 0;
 }
