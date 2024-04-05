@@ -12,25 +12,22 @@ int main()
     {
         ll n;
         cin >> n;
-        vector<ll> v(n);
-        for (int i = 0; i < n; i++)
+        vector<ll> v(n+1);
+        ll d = 0;
+        for (int i = 1; i <= n; i++)
         {
             cin >> v[i];
-        }
-        bool flag = false;
-        for (int i = 0; i < n - 1; i++)
-        {
-            if (v[i] > v[i + 1])
+            if (v[i - 1] > v[i])
             {
-                if (i - 1 >= 0 && v[i - 1] > v[i + 1])
-                {
-                    v[i + 1] = v[i];
-                }
-                else
-                {
-                    v[i] = v[i + 1];
-                }
-                flag = true;
+                d = max(d, v[i - 1] - v[i]);
+            }
+        }
+        bool flag = true;
+        for (int i = 1; i < n - 1; i++)
+        {
+            if (v[i - 1] > v[i] && v[i] + d > v[i + 1])
+            {
+                flag = false;
                 break;
             }
         }
