@@ -25,7 +25,7 @@ void dfs(ll v, ll pa)
     }
 }
 
-void input()
+void display()
 {
     ll n, q;
     cin >> n;
@@ -64,7 +64,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        input();
+        display();
     }
 
     return 0;
