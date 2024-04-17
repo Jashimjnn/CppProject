@@ -33,9 +33,10 @@ int main()
             cin >> v;
             if(v>=0 && v<list1.size())
             {
-                auto it = list1.begin();
-                advance(it,v);
-                list1.erase(it);
+                // auto it = list1.begin();
+                // advance(it,v);
+                // list1.erase(it);
+                list1.erase(next(list1.begin(),v));
             }
         }
         cout << "L -> ";

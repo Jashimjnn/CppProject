@@ -39,17 +39,6 @@ public:
 int main()
 {
     myStack st;
-    // st.push(10);
-    // st.push(20);
-    // //st.push(30);
-    // cout<<st.top()<<endl;
-    // st.pop();
-    // cout<<st.top()<<endl;
-    // st.pop();
-    // if(st.empty()==false)
-    // {
-    //   cout<<st.top()<<endl;
-    // }
     int n;
     cin>>n;
     for(int i=0;i<n;i++)
@@ -60,8 +49,9 @@ int main()
     }
     while(st.empty()==false)
     {
-        cout<<st.top()<<endl;
+        cout<<st.top()<<" ";
         st.pop();
     }
+    cout<<endl;
     return 0;
 }
