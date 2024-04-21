@@ -87,7 +87,6 @@ void Left_Side(Node *root)
     {
         Left_Side(root->left);
     }
-
     else
     {
         Left_Side(root->right);

@@ -98,6 +98,16 @@ int main()
     Node *root2 = input_Binary_tree();
     fun(root1, v1);
     fun(root2, v2);
+    // for(auto x:v1)
+    // {
+    //     cout<<x<<" ";
+    // }
+    // cout<<endl;
+    // for(auto x:v2)
+    // {
+    //     cout<<x<<" ";
+    // }
+    // cout<<endl;
     if (v1 == v2)
     {
         Y;

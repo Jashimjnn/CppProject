@@ -4,6 +4,7 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
+vector<ll>v;
 class Node
 {
 public:
@@ -17,12 +18,12 @@ public:
         this->right = NULL;
     }
 };
-Node *input_Binary_tree()
+Node *input_Tree()
 {
     int val;
-    cin >> val;
+    cin>>val;
     Node *root;
-    if (val == -1)
+    if(val==-1)
     {
         root = NULL;
     }
@@ -30,93 +31,72 @@ Node *input_Binary_tree()
     {
         root = new Node(val);
     }
-    queue<Node *> q;
-    if (root != NULL)
-    {
-        q.push(root);
-    }
-    while (!q.empty())
-    {
-        Node *p = q.front();
-        q.pop();
-
-        int l, r;
-        cin >> l >> r;
-        Node *my_Left;
-        Node *my_Right;
-        if (l == -1)
-        {
-            my_Left = NULL;
-        }
-        else
-        {
-            my_Left = new Node(l);
-        }
-        if (r == -1)
-        {
-            my_Right = NULL;
-        }
-        else
-        {
-            my_Right = new Node(r);
-        }
-
-        p->left = my_Left;
-        p->right = my_Right;
-
-        if (p->left)
-        {
-            q.push(p->left);
-        }
-        if (p->right)
-        {
-            q.push(p->right);
-        }
-    }
-    return root;
-}
-void printLeafNodeReverse(Node *root)
-{
-    if (root == NULL)
-    {
-        return;
-    }
-
-    vector<int>v;
-    queue<Node *> q;
+    queue<Node*>q;
     if(root!=NULL)
     {
         q.push(root);
     }
-    while (!q.empty())
+    while(!q.empty())
     {
-        Node *node = q.front();
+        Node *pr = q.front();
         q.pop();
-
-        if (node->left == NULL && node->right == NULL)
+        int l,r;
+        cin>>l>>r;
+        Node *myleft;
+        Node *myright;
+        if(l==-1)
         {
-            v.push_back(node->val);
+            myleft = NULL;
         }
-
-        if (node->right)
+        else
         {
-            q.push(node->right);
+            myleft = new Node(l);
         }
-
-        if (node->left)
+        if(r==-1)
         {
-            q.push(node->left);
+            myright = NULL;
+        }
+        else
+        {
+            myright = new Node(r);
+        }
+        pr->left = myleft;
+        pr->right = myright;
+        if(pr->left)
+        {
+            q.push(pr->left);
+        }
+        if(pr->right)
+        {
+            q.push(pr->right);
         }
     }
-    sort(v.rbegin(),v.rend());
-    for(auto x : v)
+    return root;
+}
+void Leaf_Node(Node *root,vector<ll>&v)
+{
+    if(root->left==NULL && root->right==NULL)
     {
-        cout<<x<<" ";
+        v.push_back(root->val);
+    }
+    if(root->left)
+    {
+        Leaf_Node(root->left,v);
+    }
+    if(root->right)
+    {
+        Leaf_Node(root->right,v);
     }
 }
 int main()
 {
-    Node *root = input_Binary_tree();
-    printLeafNodeReverse(root);
+    Node *root = input_Tree();
+    Leaf_Node(root,v);
+    sort(v.rbegin(),v.rend());
+    for(auto x:v)
+    {
+        cout<<x<<" ";
+    }
+    cout<<endl;
     return 0;
 }

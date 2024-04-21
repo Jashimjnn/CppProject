@@ -4,6 +4,7 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
+vector<ll>v;
 class Node
 {
 public:
@@ -17,7 +18,7 @@ public:
         this->right = NULL;
     }
 };
-Node *input_tree()
+Node *input_Tree()
 {
     int val;
     cin >> val;
@@ -72,24 +73,39 @@ Node *input_tree()
     }
     return root;
 }
-int count_leaf(Node *root)
+// int count_Leaf_Node(Node *root)
+// {
+//     int cnt=0;
+//     if(root==NULL)
+//     {
+//         return 0;
+//     }
+//     if(root->left==NULL && root->right==NULL)
+//     {
+//         cnt=1;
+//     }
+//     else
+//     {
+//         int l = count_Leaf_Node(root->left);
+//         int r = count_Leaf_Node(root->right);
+//         cnt = l+r;
+//     }
+//     return cnt;
+// }
+void count_Leaf_Node(Node *root)
 {
-    int cnt;
-    if (root == NULL)
+    if(root->left==NULL && root->right==NULL)
     {
-        return 0;
+        v.push_back(root->val);
     }
-    if (root->left == NULL && root->right == NULL)
+    if(root->left)
     {
-        cnt = 1;
+        count_Leaf_Node(root->left);
     }
-    else
+    if(root->right)
     {
-        int l = count_leaf(root->left);
-        int r = count_leaf(root->right);
-        cnt = (l + r);
+        count_Leaf_Node(root->right);
     }
-    return cnt;
 }
 int main()
 {
@@ -97,9 +113,11 @@ int main()
     cin >> t;
     while (t--)
     {
-        Node *root = input_tree();
-        int ans = count_leaf(root);
-        cout << ans << endl;
+        Node *root = input_Tree();
+        //int cnt = count_Leaf_Node(root);
+        count_Leaf_Node(root);
+        cout<<v.size()<<endl;
+        v.clear();
     }
     return 0;
 }

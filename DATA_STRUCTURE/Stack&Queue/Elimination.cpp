@@ -24,12 +24,10 @@ bool Elimination(string str)
     }
     return st.empty();
 }
-
 int main()
 {
     int t;
     cin >> t;
-
     while (t--)
     {
         string str;

@@ -4,6 +4,7 @@ using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
 #define N cout << "NO" << endl;
+vector<int> v;
 class Node
 {
 public:
@@ -31,7 +32,7 @@ Node *input_Binary_tree()
         root = new Node(val);
     }
     queue<Node *> q;
-    if (root!=NULL)
+    if (root != NULL)
     {
         q.push(root);
     }
@@ -87,28 +88,56 @@ int All_Nodes_Sum(Node *root)
 
     return (root->val + l + r);
 }
-int LeafNodes_Sum(Node *root)
-{
-    if (root == NULL)
-    {
-        return 0;
-    }
+// int LeafNodes_Sum1(Node *root)
+// {
+//     if (root == NULL)
+//     {
+//         return 0;
+//     }
 
+//     if (root->left == NULL && root->right == NULL)
+//     {
+//         return root->val;
+//     }
+//     int l = LeafNodes_Sum1(root->left);
+//     int r = LeafNodes_Sum1(root->right);
+
+//     return (l + r);
+// }
+void LeafNodes_Sum(Node *root, vector<int> &v)
+{
     if (root->left == NULL && root->right == NULL)
     {
-        return root->val;
+        v.push_back(root->val);
     }
-    int l = LeafNodes_Sum(root->left);
-    int r = LeafNodes_Sum(root->right);
-
-    return (l + r);
+    if (root->left)
+    {
+        LeafNodes_Sum(root->left, v);
+    }
+    if (root->right)
+    {
+        LeafNodes_Sum(root->right, v);
+    }
 }
-
 int main()
 {
     Node *root = input_Binary_tree();
     int ans = All_Nodes_Sum(root);
-    int ans1 = LeafNodes_Sum(root);
-    cout << ans-ans1 << endl;
+    // int ans2 = LeafNodes_Sum1(root);
+    LeafNodes_Sum(root, v);
+    int ans1 = 0;
+    for (auto x : v)
+    {
+        ans1 += x;
+    }
+    // for(auto x:v)
+    // {
+    //     cout<<x<<" ";
+    // }
+    // cout<<endl;
+    // cout<<ans<<endl;
+    // cout<<ans2<<endl;
+    // cout<<ans1<<endl;
+    cout << ans - ans1 << endl;
     return 0;
 }

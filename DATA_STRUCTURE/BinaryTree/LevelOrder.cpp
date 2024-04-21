@@ -74,6 +74,10 @@ Node *input_tree()
 }
 void LevelOrder(Node *root)
 {
+    if(root==NULL)
+    {
+        return;
+    }
     queue<Node*>q;
     if(root!=NULL)
     {
