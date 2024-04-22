@@ -8,23 +8,25 @@ int main()
 {
     ll t;
     cin >> t;
-    vector<ll> pre(1000000001);
-    pre[1] = 1;
-    for (int i = 2; i <= 1000000000; i++)
-    {
-        pre[i + 1] = pre[i - 1] + pre[i];
-    }
     while (t--)
     {
         ll n, k;
         cin >> n >> k;
-        vector<ll>v;
-        ll sum = 0;
-        for (int i = 1; i <= n; i++)
+        if (n == 1)
         {
-
+            cout << k << endl;
+            continue;
         }
-        cout << sum << endl;
+
+        ll msb = __lg(k);
+        ll a = 1 << msb;
+        cout << --a << " ";
+        cout << k - a << " ";
+        for (int i = 0; i < n - 2; i++)
+        {
+            cout << 0 << " ";
+        }
+        cout << endl;
     }
     return 0;
 }
