@@ -1,0 +1,1 @@
+{"name":"Local: firs","url":"d:\\CppProject\\XPSC_Batch_4\\Week5\\day4\\firs.cpp","tests":[{"id":1713976198864,"input":"4\n2 1\n3 4\n4 2\n3 4 4 5\n5 3\n1 2 3 2 1\n6 2\n6 5 4 3 2 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week5\\day4\\firs.cpp","group":"local","local":true}

@@ -12,26 +12,26 @@ int main()
     {
         ll n, x;
         cin >> n >> x;
-        if (n == x)
+        if (n == 1 && x == 0)
+        {
+            cout << 1 << endl;
+            continue;
+        }
+        if (x + 1 >= n)
         {
             cout << -1 << endl;
             continue;
         }
-        vector<ll> v;
-        int a = 1;
-        for (int i = 0; i < n; i++)
+
+        for (int i = n; i > x + 1; i--)
         {
-            v.push_back(a);
-            a += x;
+            cout << i << " ";
         }
-        if (v[n - 1] > n)
-            cout << -1 << endl;
-        else
+        for (int i = 1; i <= x + 1; i++)
         {
-            for (auto e : v)
-                cout << e << " ";
-            cout << endl;
+            cout << i << " ";
         }
+        cout << endl;
     }
     return 0;
 }
