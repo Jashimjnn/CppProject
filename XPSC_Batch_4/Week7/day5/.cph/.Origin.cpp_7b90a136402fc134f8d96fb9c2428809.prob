@@ -1,0 +1,1 @@
+{"name":"Local: Origin","url":"d:\\CppProject\\XPSC_Batch_4\\Week7\\day5\\Origin.cpp","tests":[{"id":1715785302235,"input":"3\n5\n12\n1000000000000000000","output":"15\n51\n4999999999999999996"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week7\\day5\\Origin.cpp","group":"local","local":true}

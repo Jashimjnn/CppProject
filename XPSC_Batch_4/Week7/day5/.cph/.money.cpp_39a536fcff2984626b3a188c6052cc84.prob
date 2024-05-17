@@ -1,0 +1,1 @@
+{"name":"Local: money","url":"d:\\CppProject\\XPSC_Batch_4\\Week7\\day5\\money.cpp","tests":[{"id":1715783930308,"input":"3\n10000 3\n1 2\n999 1","output":"80000\n2002\n1999"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week7\\day5\\money.cpp","group":"local","local":true}

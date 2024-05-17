@@ -1,0 +1,1 @@
+{"name":"Local: 3out1in","url":"d:\\CppProject\\XPSC_Batch_4\\Week7\\day5\\3out1in.cpp","tests":[{"id":1715787354344,"input":"1\n5 3\n3 -1 2 4 5\n3 1 5","output":"6 3 11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week7\\day5\\3out1in.cpp","group":"local","local":true}
