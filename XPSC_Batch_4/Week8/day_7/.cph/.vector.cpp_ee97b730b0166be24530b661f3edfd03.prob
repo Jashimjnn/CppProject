@@ -1,0 +1,1 @@
+{"name":"Local: vector","url":"d:\\CppProject\\XPSC_Batch_4\\Week8\\day_7\\vector.cpp","tests":[{"id":1716533364125,"input":"10\n1 2 3 4 5 4 4 4 4 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week8\\day_7\\vector.cpp","group":"local","local":true}
