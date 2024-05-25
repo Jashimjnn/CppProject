@@ -8,13 +8,21 @@ int main()
 {
     ll n;
     cin>>n;
-    if(n<60)
+    if(n==2 || n==3)
     {
-        cout<<"No"<<endl;
+        cout<<"NO SOLUTION"<<endl;
     }
     else
     {
-        cout<<"Yes"<<endl;
+        for(int i=2;i<=n;i+=2)
+        {
+            cout<<i<<" ";
+        }
+        for(int i=1;i<=n;i+=2)
+        {
+            cout<<i<<" ";
+        }
+        cout<<endl;
     }
     return 0;
 }

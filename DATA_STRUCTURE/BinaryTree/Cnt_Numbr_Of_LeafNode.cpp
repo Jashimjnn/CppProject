@@ -73,40 +73,44 @@ Node *input_Tree()
     }
     return root;
 }
-// int count_Leaf_Node(Node *root)
+int count_Leaf_Node(Node *root)
+{
+    int cnt=0;
+    if(root==NULL)
+    {
+        return 0;
+    }
+    if(root->left==NULL && root->right==NULL)
+    {
+        cnt=1;
+    }
+    else
+    {
+        int l = count_Leaf_Node(root->left);
+        int r = count_Leaf_Node(root->right);
+        cnt = l+r;
+    }
+    return cnt;
+}
+// void count_Leaf_Node(Node *root)
 // {
-//     int cnt=0;
 //     if(root==NULL)
 //     {
-//         return 0;
+//         return;
 //     }
 //     if(root->left==NULL && root->right==NULL)
 //     {
-//         cnt=1;
+//         v.push_back(root->val);
 //     }
-//     else
+//     if(root->left)
 //     {
-//         int l = count_Leaf_Node(root->left);
-//         int r = count_Leaf_Node(root->right);
-//         cnt = l+r;
+//         count_Leaf_Node(root->left);
 //     }
-//     return cnt;
+//     if(root->right)
+//     {
+//         count_Leaf_Node(root->right);
+//     }
 // }
-void count_Leaf_Node(Node *root)
-{
-    if(root->left==NULL && root->right==NULL)
-    {
-        v.push_back(root->val);
-    }
-    if(root->left)
-    {
-        count_Leaf_Node(root->left);
-    }
-    if(root->right)
-    {
-        count_Leaf_Node(root->right);
-    }
-}
 int main()
 {
     int t;
@@ -114,10 +118,11 @@ int main()
     while (t--)
     {
         Node *root = input_Tree();
-        //int cnt = count_Leaf_Node(root);
-        count_Leaf_Node(root);
-        cout<<v.size()<<endl;
-        v.clear();
+        int cnt = count_Leaf_Node(root);
+        // count_Leaf_Node(root);
+        // cout<<v.size()<<endl;
+        // v.clear();
+        cout<<cnt<<endl;
     }
     return 0;
 }
