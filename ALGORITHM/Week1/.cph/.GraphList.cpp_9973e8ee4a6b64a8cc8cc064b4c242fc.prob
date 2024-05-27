@@ -1,0 +1,1 @@
+{"name":"Local: GraphList","url":"d:\\CppProject\\ALGORITHM\\Week1\\GraphList.cpp","tests":[{"id":1716726883536,"input":"6 6\n0 1\n1 5\n0 4\n0 3\n3 4\n2 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\ALGORITHM\\Week1\\GraphList.cpp","group":"local","local":true}
