@@ -25,6 +25,7 @@ void bfs(ll src)
             }
         }
     }
+    cout<<endl;
 }
 int main()
 {

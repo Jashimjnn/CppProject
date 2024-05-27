@@ -12,7 +12,7 @@ int n, m;
 bool valid(int x, int y)
 {
     
-    return !vis[x][y] && mat[x][y] != -1 && x >= 0 && x < n && y >= 0 && y < m;
+    return mat[x][y] != -1 && x >= 0 && x < n && y >= 0 && y < m;
 }
 void bfs(pair<int, int> src)
 {
@@ -29,7 +29,7 @@ void bfs(pair<int, int> src)
         {
             int a = x + d[i].first;
             int b = y + d[i].second;
-            if (valid(a, b))
+            if (valid(a, b) && vis[a][b]==false)
             {
                 q.push({a,b});
                 vis[a][b] = true;

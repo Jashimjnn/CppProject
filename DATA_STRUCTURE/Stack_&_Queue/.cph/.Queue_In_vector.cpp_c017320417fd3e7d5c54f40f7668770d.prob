@@ -1,0 +1,1 @@
+{"name":"Local: Queue_In_vector","url":"d:\\CppProject\\DATA_STRUCTURE\\Stack_&_Queue\\Queue_In_vector.cpp","tests":[{"id":1716812190349,"input":"5\n10 20 30 40 50","output":"5\n10 20 30 40 50"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\DATA_STRUCTURE\\Stack_&_Queue\\Queue_In_vector.cpp","group":"local","local":true}
