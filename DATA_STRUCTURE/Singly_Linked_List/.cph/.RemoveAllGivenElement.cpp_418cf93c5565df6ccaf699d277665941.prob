@@ -1,0 +1,1 @@
+{"name":"Local: RemoveAllGivenElement","url":"d:\\CppProject\\DATA_STRUCTURE\\Singly_Linked_List\\RemoveAllGivenElement.cpp","tests":[{"id":1716913251358,"input":"1 2 6 3 4 5 6 -1\n6","output":"1 2 3 4 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\DATA_STRUCTURE\\Singly_Linked_List\\RemoveAllGivenElement.cpp","group":"local","local":true}

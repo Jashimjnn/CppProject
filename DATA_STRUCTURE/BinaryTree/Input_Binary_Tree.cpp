@@ -17,12 +17,12 @@ public:
         this->right = NULL;
     }
 };
-Node *input_Tree()
+Node *input_tree()
 {
     int val;
-    cin >> val;
+    cin>>val;
     Node *root;
-    if (val == -1)
+    if(val==-1)
     {
         root = NULL;
     }
@@ -30,20 +30,20 @@ Node *input_Tree()
     {
         root = new Node(val);
     }
-    queue<Node *> q;
-    if (root != NULL)
+    queue<Node*>q;
+    if(root)
     {
         q.push(root);
     }
-    while (!q.empty())
+    while(!q.empty())
     {
         Node *pr = q.front();
         q.pop();
-        int l, r;
-        cin >> l >> r;
+        int l,r;
+        cin>>l>>r;
         Node *myleft;
         Node *myright;
-        if (l == -1)
+        if(l==-1)
         {
             myleft = NULL;
         }
@@ -51,7 +51,7 @@ Node *input_Tree()
         {
             myleft = new Node(l);
         }
-        if (r == -1)
+        if(r==-1)
         {
             myright = NULL;
         }
@@ -61,11 +61,11 @@ Node *input_Tree()
         }
         pr->left = myleft;
         pr->right = myright;
-        if (pr->left)
+        if(pr->left)
         {
             q.push(pr->left);
         }
-        if (pr->right)
+        if(pr->right)
         {
             q.push(pr->right);
         }
@@ -74,17 +74,17 @@ Node *input_Tree()
 }
 void Post_Order(Node *root)
 {
-    if (root == NULL)
+    if(root==NULL)
     {
         return;
     }
     Post_Order(root->left);
     Post_Order(root->right);
-    cout << root->val << " ";
+    cout<<root->val<<" ";
 }
 int main()
 {
-    Node *root = input_Tree();
+    Node *root = input_tree();
     Post_Order(root);
     return 0;
 }

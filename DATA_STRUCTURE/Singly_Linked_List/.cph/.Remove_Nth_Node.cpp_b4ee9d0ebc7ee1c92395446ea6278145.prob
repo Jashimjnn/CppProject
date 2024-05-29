@@ -1,0 +1,1 @@
+{"name":"Local: Remove_Nth_Node","url":"d:\\CppProject\\DATA_STRUCTURE\\Singly_Linked_List\\Remove_Nth_Node.cpp","tests":[{"id":1716911241342,"input":"1 2 3 4 5 -1\n2","output":"1 2 3 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\DATA_STRUCTURE\\Singly_Linked_List\\Remove_Nth_Node.cpp","group":"local","local":true}

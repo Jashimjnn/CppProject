@@ -1,0 +1,1 @@
+{"name":"Local: Evaluate_Postfix","url":"d:\\CppProject\\DATA_STRUCTURE\\Stack_&_Queue\\Evaluate_Postfix.cpp","tests":[{"id":1716872228886,"input":"231*+9-","output":"-4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\DATA_STRUCTURE\\Stack_&_Queue\\Evaluate_Postfix.cpp","group":"local","local":true}

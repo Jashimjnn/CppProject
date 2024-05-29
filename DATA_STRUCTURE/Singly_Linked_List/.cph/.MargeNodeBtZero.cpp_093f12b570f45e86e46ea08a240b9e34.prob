@@ -1,0 +1,1 @@
+{"name":"Local: MargeNodeBtZero","url":"d:\\CppProject\\DATA_STRUCTURE\\Singly_Linked_List\\MargeNodeBtZero.cpp","tests":[{"id":1716913670927,"input":"0 3 1 0 4 5 2 0 -1","output":"4 11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\DATA_STRUCTURE\\Singly_Linked_List\\MargeNodeBtZero.cpp","group":"local","local":true}
