@@ -1,0 +1,1 @@
+{"name":"Local: Bfs_Undirected","url":"d:\\CppProject\\ALGORITHM\\Week2\\Cycle_Ditected\\Bfs_Undirected.cpp","tests":[{"id":1717341362745,"input":"4 4\n0 1\n1 2\n2 3\n3 1","output":"Cycle Ditected"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\ALGORITHM\\Week2\\Cycle_Ditected\\Bfs_Undirected.cpp","group":"local","local":true}
