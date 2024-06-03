@@ -1,6 +1,6 @@
 /**
  *    author:  Mohammad Jashim Uddin
- **/
+**/
 #include <iostream>
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -19,35 +19,26 @@ using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node
 
 int main()
 {
-    ll n, q;
-    cin >> n >> q;
-    vector<ll> v(n);
-    for (ll i = 0; i < n; i++)
+    ll n;
+    cin>>n;
+    vector<ll>v(n);
+    for(int i=0;i<n;i++)
     {
-        cin >> v[i];
+        cin>>v[i];
     }
-    vector<ll> d(n + 1);
-    for (ll i = 1; i <= q; i++)
+    ll l=0,r=0;
+    ll sum=0,mx = LLONG_MIN;
+    while(r<n)
     {
-        ll l, r;
-        cin >> l >> r;
-        l--, r--;
-        d[l]++;
-        d[r + 1]--;
+        sum+=v[r];
+        if((r-l+1)==2)
+        {
+            mx = max(mx,sum);
+            sum-=v[l];
+            l++;
+        }
+        r++;
     }
-    for (ll i = 1; i <= n; i++)
-    {
-        d[i] = d[i - 1] + d[i];
-    }
-
-    sort(v.rbegin(), v.rend());
-    sort(d.rbegin(), d.rend());
-
-    ll sum = 0;
-    for (ll i = 0; i < n; i++)
-    {
-        sum += (1LL * d[i] * v[i]);
-    }
-    cout << sum << endl;
+    cout<<mx<<endl;
     return 0;
 }

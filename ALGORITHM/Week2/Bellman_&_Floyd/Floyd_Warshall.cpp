@@ -1,6 +1,6 @@
 /**
  *    author:  Mohammad Jashim Uddin
- **/
+**/
 #include <iostream>
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -16,50 +16,49 @@ typedef long long ll;
 #define onee cout << "-1" << endl;
 template <typename T>
 using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-class Edge
-{
-public:
-    ll u, v, c;
-    Edge(ll u, ll v, ll c)
-    {
-        this->u = u;
-        this->v = v;
-        this->c = c;
-    }
-};
-ll dis[1005];
+
 int main()
 {
-    ll n, e;
-    cin >> n >> e;
-    vector<Edge> Edge_list;
-    while (e--)
+    ll n,e;
+    cin>>n>>e;
+    ll adj[n][n];
+    for(int i=0;i<n;i++)
     {
-        ll a, b, c;
-        cin >> a >> b >> c;
-        Edge_list.push_back(Edge(a, b, c));
-    }
-    for (int i = 0; i < n; i++)
-    {
-        dis[i] = LLONG_MAX;
-    }
-    for (int i = 1; i <= n - 1; i++)
-    {
-        for (auto ed : Edge_list)
+        for(int j=0;j<n;j++)
         {
-            ll u,v,c;
-            u = ed.u;
-            v = ed.v;
-            c = ed.c;
-            if (dis[u] < LLONG_MAX && c + dis[u] < dis[v])
+            adj[i][j] = LLONG_MAX;
+            if(i==j)
             {
-                dis[v] = c + dis[u];
+                adj[i][j]=0;
+            }
+        }
+    }
+    while(e--)
+    {
+        ll a,b,c;
+        cin>>a>>b>>c;
+        adj[a][b]=c;
+    }
+    for(int k=0;k<n;k++)
+    {
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(adj[i][k]+adj[k][j]<adj[i][j])
+                {
+                    adj[i][j] = adj[i][k]+adj[k][j];
+                }
             }
         }
     }
     for (int i = 0; i < n; i++)
     {
-        cout << i << "->" << dis[i] << endl;
+        if (adj[i][i] < 0)
+        {
+            cout << "Cycle detected" << endl;
+            break;
+        }
     }
     return 0;
 }

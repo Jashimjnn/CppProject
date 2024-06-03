@@ -19,35 +19,36 @@ using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node
 
 int main()
 {
-    ll n, q;
-    cin >> n >> q;
-    vector<ll> v(n);
-    for (ll i = 0; i < n; i++)
-    {
-        cin >> v[i];
-    }
-    vector<ll> d(n + 1);
-    for (ll i = 1; i <= q; i++)
+    ll n;
+    cin >> n;
+    map<ll, ll> mp;
+    for (ll i = 1; i <= n; i++)
     {
         ll l, r;
         cin >> l >> r;
-        l--, r--;
-        d[l]++;
-        d[r + 1]--;
+        mp[l]++;
+        mp[r + 1]--;
     }
-    for (ll i = 1; i <= n; i++)
-    {
-        d[i] = d[i - 1] + d[i];
-    }
-
-    sort(v.rbegin(), v.rend());
-    sort(d.rbegin(), d.rend());
 
     ll sum = 0;
-    for (ll i = 0; i < n; i++)
+    bool flag = true;
+    for (auto [idx, value] : mp)
     {
-        sum += (1LL * d[i] * v[i]);
+        sum += value;
+        if (sum > 2)
+        {
+            flag = false;
+            break;
+        }
     }
-    cout << sum << endl;
+
+    if (flag==true)
+    {
+        Y;
+    }
+    else
+    {
+        N;
+    }
     return 0;
 }
