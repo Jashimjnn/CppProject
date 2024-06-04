@@ -1,0 +1,1 @@
+{"name":"Local: Subset_sum_count","url":"d:\\CppProject\\ALGORITHM\\Week4\\0-1-knapshack-variation\\Subset_sum_count.cpp","tests":[{"id":1717491365340,"input":"4\n1 2 3 4\n7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\ALGORITHM\\Week4\\0-1-knapshack-variation\\Subset_sum_count.cpp","group":"local","local":true}
