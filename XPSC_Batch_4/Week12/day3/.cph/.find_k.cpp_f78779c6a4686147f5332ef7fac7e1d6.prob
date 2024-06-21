@@ -1,0 +1,1 @@
+{"name":"Local: find_k","url":"d:\\CppProject\\XPSC_Batch_4\\Week12\\day3\\find_k.cpp","tests":[{"id":1718783366081,"input":"5\n4 2 6 3 9\n2","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week12\\day3\\find_k.cpp","group":"local","local":true}

@@ -1,0 +1,38 @@
+/**
+ *    author:  Mohammad Jashim Uddin
+**/
+#include <iostream>
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+using namespace std;
+typedef long long ll;
+#define Y cout << "YES" << endl;
+#define yy cout << "Yes" << endl;
+#define N cout << "NO" << endl;
+#define nn cout << "No" << endl;
+#define one cout << "1" << endl;
+#define onee cout << "-1" << endl;
+template <typename T>
+using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+void Subset(ll ar[],ll n)
+{
+    for(int i=0;i<(1<<n);i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            if(i&(1<<j))
+            {
+                cout<<ar[j]<<" ";
+            }
+        }
+        cout<<endl;
+    }
+}
+int main()
+{
+    ll ar[4] = {1,2,3,4};
+    Subset(ar,4);
+    return 0;
+}

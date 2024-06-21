@@ -1,0 +1,1 @@
+{"name":"Local: Selection_sort","url":"d:\\CppProject\\ALGORITHM\\Sorting_Algorithm\\Selection_sort.cpp","tests":[{"id":1718982986818,"input":"5\n31 43 26 29 12","output":"12 26 29 31 43 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\ALGORITHM\\Sorting_Algorithm\\Selection_sort.cpp","group":"local","local":true}
