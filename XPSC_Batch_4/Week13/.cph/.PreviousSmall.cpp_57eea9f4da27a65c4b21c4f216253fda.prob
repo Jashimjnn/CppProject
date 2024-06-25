@@ -1,0 +1,1 @@
+{"name":"Local: PreviousSmall","url":"d:\\CppProject\\XPSC_Batch_4\\Week13\\PreviousSmall.cpp","tests":[{"id":1719071689032,"input":"6\n2 1 5 6 2 3","output":"-1 -1 1 2 1 4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week13\\PreviousSmall.cpp","group":"local","local":true}

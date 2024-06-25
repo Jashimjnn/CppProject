@@ -1,0 +1,1 @@
+{"name":"Local: NearestSmall","url":"d:\\CppProject\\XPSC_Batch_4\\Week13\\NearestSmall.cpp","tests":[{"id":1719070489478,"input":"6\n2 1 5 6 2 3","output":"1 -1 2 2 -1 -1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week13\\NearestSmall.cpp","group":"local","local":true}
