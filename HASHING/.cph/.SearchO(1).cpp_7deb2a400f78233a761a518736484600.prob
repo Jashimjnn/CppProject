@@ -1,0 +1,1 @@
+{"name":"Local: SearchO(1)","url":"d:\\CppProject\\HASHING\\SearchO(1).cpp","tests":[{"id":1719558181550,"input":"6\n-1 9 2 -5 3 1\n3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\HASHING\\SearchO(1).cpp","group":"local","local":true}
