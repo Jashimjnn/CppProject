@@ -1,0 +1,1 @@
+{"name":"Local: Sum","url":"d:\\CppProject\\XPSC_Batch_4\\Week13\\day5\\Sum.cpp","tests":[{"id":1719682179663,"input":"6 7\n2 3 1 2 4 3","output":"2"},{"id":1719683119900,"input":"3 4\n1 4 4","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week13\\day5\\Sum.cpp","group":"local","local":true}
