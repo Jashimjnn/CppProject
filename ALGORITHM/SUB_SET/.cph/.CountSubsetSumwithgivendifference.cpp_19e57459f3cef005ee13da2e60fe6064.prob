@@ -1,0 +1,1 @@
+{"name":"Local: CountSubsetSumwithgivendifference","url":"d:\\CppProject\\ALGORITHM\\SUB_SET\\CountSubsetSumwithgivendifference.cpp","tests":[{"id":1720546425183,"input":"4\n1 1 2 3\n1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\ALGORITHM\\SUB_SET\\CountSubsetSumwithgivendifference.cpp","group":"local","local":true}

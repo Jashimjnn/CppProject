@@ -1,0 +1,1 @@
+{"name":"Local: Sub_setSum","url":"d:\\CppProject\\ALGORITHM\\SUB_SET\\Sub_setSum.cpp","tests":[{"id":1720542301292,"input":"4\n1 2 3 6\n7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\ALGORITHM\\SUB_SET\\Sub_setSum.cpp","group":"local","local":true}

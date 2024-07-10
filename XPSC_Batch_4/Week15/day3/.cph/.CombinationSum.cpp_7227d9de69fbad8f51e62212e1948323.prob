@@ -1,0 +1,1 @@
+{"name":"Local: CombinationSum","url":"d:\\CppProject\\XPSC_Batch_4\\Week15\\day3\\CombinationSum.cpp","tests":[{"id":1720620929499,"input":"4 7\n2 3 6 7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\XPSC_Batch_4\\Week15\\day3\\CombinationSum.cpp","group":"local","local":true}
