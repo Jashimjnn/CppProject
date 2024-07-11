@@ -1,0 +1,1 @@
+{"name":"Local: Unbound_Coin_Change1","url":"d:\\CppProject\\ALGORITHM\\SUB_SET\\Unbound_Coin_Change1.cpp","tests":[{"id":1720679481973,"input":"3\n1 2 3\n5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CppProject\\ALGORITHM\\SUB_SET\\Unbound_Coin_Change1.cpp","group":"local","local":true}
