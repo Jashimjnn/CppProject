@@ -20,19 +20,19 @@ using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node
 class Node
 {
 public:
-    ll val;
+    int val;
     Node *left;
     Node *right;
-    Node(ll val)
+    Node(int val)
     {
         this->val = val;
         this->left = NULL;
         this->right = NULL;
     }
 };
-Node *input_Binary_tree()
+Node *input_binary_tree()
 {
-    ll val;
+    int val;
     cin >> val;
     Node *root;
     if (val == -1)
@@ -44,7 +44,7 @@ Node *input_Binary_tree()
         root = new Node(val);
     }
     queue<Node *> q;
-    if (root != NULL)
+    if (root)
     {
         q.push(root);
     }
@@ -52,31 +52,28 @@ Node *input_Binary_tree()
     {
         Node *p = q.front();
         q.pop();
-
-        ll l, r;
+        int l, r;
         cin >> l >> r;
-        Node *my_Left;
-        Node *my_Right;
+        Node *myleft;
+        Node *myright;
         if (l == -1)
         {
-            my_Left = NULL;
+            myleft = NULL;
         }
         else
         {
-            my_Left = new Node(l);
+            myleft = new Node(l);
         }
         if (r == -1)
         {
-            my_Right = NULL;
+            myright = NULL;
         }
         else
         {
-            my_Right = new Node(r);
+            myright = new Node(r);
         }
-
-        p->left = my_Left;
-        p->right = my_Right;
-
+        p->left = myleft;
+        p->right = myright;
         if (p->left)
         {
             q.push(p->left);
@@ -88,32 +85,52 @@ Node *input_Binary_tree()
     }
     return root;
 }
-ll countLeafNode(Node *root)
+// void Post_Order(Node *root)
+// {
+//     if(root==NULL)
+//     {
+//         return;
+//     }
+//     Post_Order(root->left);
+//     Post_Order(root->right);
+//     cout<<root->val<<" ";
+// }
+void Level_Order(Node *root)
 {
-    ll cnt = 0;
     if (root == NULL)
     {
-        return 0;
+        return;
     }
-    if (root->left == NULL && root->right == NULL)
+    queue<Node *> q;
+    if (root)
     {
-        return 1;
+        q.push(root);
     }
-    else
+    while (!q.empty())
     {
-        ll l = countLeafNode(root->left);
-        ll r = countLeafNode(root->right);
-        return l+r;
+        Node *fr = q.front();
+        q.pop();
+        cout << fr->val << " ";
+        if (fr->left)
+        {
+            q.push(fr->left);
+        }
+        if (fr->right)
+        {
+            q.push(fr->right);
+        }
     }
+    cout<<endl;
 }
 int main()
 {
-    ll t;
+    int t;
     cin >> t;
     while (t--)
     {
-        Node *root = input_Binary_tree();
-        cout << countLeafNode(root) << endl;
+        Node *root = input_binary_tree();
+        // Post_Order(root);
+        Level_Order(root);
     }
     return 0;
 }

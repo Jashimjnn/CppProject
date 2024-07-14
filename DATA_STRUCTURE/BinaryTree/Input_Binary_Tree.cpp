@@ -1,9 +1,22 @@
+/**
+ *    author:  Mohammad Jashim Uddin
+**/
 #include <iostream>
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
 using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
+#define yy cout << "Yes" << endl;
 #define N cout << "NO" << endl;
+#define nn cout << "No" << endl;
+#define one cout << "1" << endl;
+#define onee cout << "-1" << endl;
+template <typename T>
+using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
 class Node
 {
 public:
@@ -19,12 +32,12 @@ public:
 };
 Node *input_tree()
 {
-    int val;
+    ll val;
     cin>>val;
     Node *root;
     if(val==-1)
     {
-        root = NULL;
+        root=NULL;
     }
     else
     {
@@ -37,9 +50,9 @@ Node *input_tree()
     }
     while(!q.empty())
     {
-        Node *pr = q.front();
+        Node *p = q.front();
         q.pop();
-        int l,r;
+        ll l,r;
         cin>>l>>r;
         Node *myleft;
         Node *myright;
@@ -59,15 +72,15 @@ Node *input_tree()
         {
             myright = new Node(r);
         }
-        pr->left = myleft;
-        pr->right = myright;
-        if(pr->left)
+        p->left = myleft;
+        p->right = myright;
+        if(p->left)
         {
-            q.push(pr->left);
+            q.push(p->left);
         }
-        if(pr->right)
+        if(p->right)
         {
-            q.push(pr->right);
+            q.push(p->right);
         }
     }
     return root;

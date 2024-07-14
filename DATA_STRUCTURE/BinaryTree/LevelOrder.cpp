@@ -1,9 +1,22 @@
+/**
+ *    author:  Mohammad Jashim Uddin
+**/
 #include <iostream>
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
 using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
+#define yy cout << "Yes" << endl;
 #define N cout << "NO" << endl;
+#define nn cout << "No" << endl;
+#define one cout << "1" << endl;
+#define onee cout << "-1" << endl;
+template <typename T>
+using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
 class Node
 {
 public:
@@ -17,12 +30,12 @@ public:
         this->right = NULL;
     }
 };
-Node *input_tree()
+Node *input_Binary_tree()
 {
     int val;
-    cin>>val;
+    cin >> val;
     Node *root;
-    if(val==-1)
+    if (val == -1)
     {
         root = NULL;
     }
@@ -30,56 +43,59 @@ Node *input_tree()
     {
         root = new Node(val);
     }
-    queue<Node*>q;
-    if(root!=NULL)
+    queue<Node *> q;
+    if (root != NULL)
     {
         q.push(root);
     }
-    while(!q.empty())
+    while (!q.empty())
     {
-        Node *pr = q.front();
+        Node *p = q.front();
         q.pop();
-        int l,r;
-        cin>>l>>r;
-        Node *myleft;
-        Node *myright;
-        if(l==-1)
+
+        int l, r;
+        cin >> l >> r;
+        Node *my_Left;
+        Node *my_Right;
+        if (l == -1)
         {
-            myleft = NULL;
+            my_Left = NULL;
         }
         else
         {
-            myleft = new Node(l);
+            my_Left = new Node(l);
         }
-        if(r==-1)
+        if (r == -1)
         {
-            myright = NULL;
+            my_Right = NULL;
         }
         else
         {
-            myright = new Node(r);
+            my_Right = new Node(r);
         }
-        pr->left = myleft;
-        pr->right = myright;
-        if(pr->left)
+
+        p->left = my_Left;
+        p->right = my_Right;
+
+        if (p->left)
         {
-            q.push(pr->left);
+            q.push(p->left);
         }
-        if(pr->right)
+        if (p->right)
         {
-            q.push(pr->right);
+            q.push(p->right);
         }
     }
     return root;
 }
-void LevelOrder(Node *root)
+void Level_Order(Node *root)
 {
     if(root==NULL)
     {
         return;
     }
     queue<Node*>q;
-    if(root!=NULL)
+    if(root)
     {
         q.push(root);
     }
@@ -101,12 +117,12 @@ void LevelOrder(Node *root)
 }
 int main()
 {
-    int t;
+    ll t;
     cin>>t;
     while(t--)
     {
-        Node *root = input_tree();
-        LevelOrder(root);
+        Node *root = input_Binary_tree();
+        Level_Order(root);
     }
     return 0;
 }

@@ -1,9 +1,22 @@
+/**
+ *    author:  Mohammad Jashim Uddin
+ **/
 #include <iostream>
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
 using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
+#define yy cout << "Yes" << endl;
 #define N cout << "NO" << endl;
+#define nn cout << "No" << endl;
+#define one cout << "1" << endl;
+#define onee cout << "-1" << endl;
+template <typename T>
+using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
 class Node
 {
 public:
@@ -17,15 +30,15 @@ public:
         this->right = NULL;
     }
 };
-void PreOrder(Node *root)
+void Pre_Order(Node *root)
 {
-    if(root==NULL)
+    if (root == NULL)
     {
         return;
     }
-    cout<<root->val<<" ";
-    PreOrder(root->left);
-    PreOrder(root->right);
+    cout << root->val << " ";
+    Pre_Order(root->left);
+    Pre_Order(root->right);
 }
 int main()
 {
@@ -34,20 +47,10 @@ int main()
     Node *b = new Node(30);
     Node *c = new Node(40);
     Node *d = new Node(50);
-    Node *e = new Node(60);
-    Node *f = new Node(70);
-    Node *g = new Node(80);
-    Node *h = new Node(90);
-    Node *i = new Node(100);
-    root->left=a;
-    root->right=b;
-    a->left=c;
-    a->right=h;
-    c->right=e;
-    b->right=d;
-    d->left=f;
-    d->right=g;
-    h->right=i;
-    PreOrder(root);
+    root->left = a;
+    root->right = b;
+    a->left = c;
+    a->right = d;
+    Pre_Order(root);
     return 0;
 }
