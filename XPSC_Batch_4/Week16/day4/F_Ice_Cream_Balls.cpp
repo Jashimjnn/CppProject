@@ -1,6 +1,5 @@
 /**
  *    author:  Mohammad Jashim Uddin
- *    2024-07-17 23:14:19
  **/
 #include <iostream>
 #include <bits/stdc++.h>
@@ -26,35 +25,27 @@ int main()
     {
         ll n;
         cin >> n;
-        string str, str1;
-        cin >> str;
-        char ch;
-        if (str[0] == '9')
+        ll l = 0, r = min<ll>(2e9, 2 * n);
+        while (r - l > 1)
         {
-            vector<char> v(n + 1, '1');
-            for (int i = n; i >= 1; i--)
+            ll m = (l + r) >> 1;
+            if (m * (m - 1) / 2 + m < n)
             {
-                if (str[i - 1] <= v[i])
-                {
-                    ch = v[i] - str[i - 1] + '0';
-                }
-                else
-                {
-                    ch = v[i] - str[i - 1] + 10 + '0';
-                    v[i - 1] -= 1;
-                }
-                str1 = ch + str1;
+                l = m;
             }
-            cout << str1 << endl;
+            else
+            {
+                r = m;
+            }
+        }
+        ll y = n - r * (r - 1) / 2;
+        if ((r + 1) * r / 2 <= n)
+        {
+            cout << min(r + y, r + 1 + n - (r + 1) * r / 2) <<endl;
         }
         else
         {
-            for (int i = 0; i < n; i++)
-            {
-                ch = ('9' - str[i]) + '0';
-                str1 += ch;
-            }
-            cout << str1 << endl;
+            cout << r + y << endl;
         }
     }
     return 0;

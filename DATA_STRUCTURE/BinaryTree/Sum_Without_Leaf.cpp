@@ -88,48 +88,48 @@ int All_Nodes_Sum(Node *root)
 
     return (root->val + l + r);
 }
-// int LeafNodes_Sum1(Node *root)
-// {
-//     if (root == NULL)
-//     {
-//         return 0;
-//     }
-
-//     if (root->left == NULL && root->right == NULL)
-//     {
-//         return root->val;
-//     }
-//     int l = LeafNodes_Sum1(root->left);
-//     int r = LeafNodes_Sum1(root->right);
-
-//     return (l + r);
-// }
-void LeafNodes_Sum(Node *root, vector<int> &v)
+int LeafNodes_Sum1(Node *root)
 {
+    if (root == NULL)
+    {
+        return 0;
+    }
+
     if (root->left == NULL && root->right == NULL)
     {
-        v.push_back(root->val);
+        return root->val;
     }
-    if (root->left)
-    {
-        LeafNodes_Sum(root->left, v);
-    }
-    if (root->right)
-    {
-        LeafNodes_Sum(root->right, v);
-    }
+    int l = LeafNodes_Sum1(root->left);
+    int r = LeafNodes_Sum1(root->right);
+
+    return (l + r);
 }
+// void LeafNodes_Sum(Node *root, vector<int> &v)
+// {
+//     if (root->left == NULL && root->right == NULL)
+//     {
+//         v.push_back(root->val);
+//     }
+//     if (root->left)
+//     {
+//         LeafNodes_Sum(root->left, v);
+//     }
+//     if (root->right)
+//     {
+//         LeafNodes_Sum(root->right, v);
+//     }
+// }
 int main()
 {
     Node *root = input_Binary_tree();
     int ans = All_Nodes_Sum(root);
-    // int ans2 = LeafNodes_Sum1(root);
-    LeafNodes_Sum(root, v);
-    int ans1 = 0;
-    for (auto x : v)
-    {
-        ans1 += x;
-    }
+    int ans1 = LeafNodes_Sum1(root);
+    // LeafNodes_Sum(root, v);
+    // int ans1 = 0;
+    // for (auto x : v)
+    // {
+    //     ans1 += x;
+    // }
     // for(auto x:v)
     // {
     //     cout<<x<<" ";

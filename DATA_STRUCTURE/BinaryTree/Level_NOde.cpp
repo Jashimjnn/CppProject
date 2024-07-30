@@ -1,9 +1,22 @@
+/**
+ *    author:  Mohammad Jashim Uddin
+ **/
 #include <iostream>
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
 using namespace std;
 typedef long long ll;
 #define Y cout << "YES" << endl;
+#define yy cout << "Yes" << endl;
 #define N cout << "NO" << endl;
+#define nn cout << "No" << endl;
+#define one cout << "1" << endl;
+#define onee cout << "-1" << endl;
+template <typename T>
+using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
 class Node
 {
 public:
@@ -75,34 +88,55 @@ Node *input_Binary_tree()
     }
     return root;
 }
-int preOrder(Node *root, int low, int high, int &sum)
+vector<pair<ll,ll>> v;
+void Level_Order(Node *root)
 {
     if (root == NULL)
     {
-        return 0;
+        return;
     }
-
-    if (root->val >= low && root->val <= high)
+    queue<Node *> q;
+    if (root)
     {
-        sum += root->val;
+        q.push(root);
     }
-    if (root->left)
+    ll l = 0;
+    while (!q.empty())
     {
-        preOrder(root->left, low, high, sum);
+        ll x = q.size();
+        for (int i = 0; i < x; i++)
+        {
+            Node *fr = q.front();
+            q.pop();
+            // cout << fr->val << " ";
+            v.push_back({l,fr->val});
+            if (fr->left)
+            {
+                q.push(fr->left);
+            }
+            if (fr->right)
+            {
+                q.push(fr->right);
+            }
+        }
+        l++;
     }
-    if (root->right)
-    {
-        preOrder(root->right, low, high, sum);
-    }
-    return sum;
+    //cout << endl;
 }
 int main()
 {
-    Node *root = input_Binary_tree();
-    int sum = 0;
-    int low, high;
-    cin >> low >> high;
-    int ans = preOrder(root, low, high, sum);
-    cout<<ans<<endl;
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        Node *root = input_Binary_tree();
+        Level_Order(root);
+        for(auto e:v)
+        {
+            cout<<e.first<<" "<<e.second<<endl;
+        }
+        cout<<endl;
+        v.clear();
+    }
     return 0;
 }

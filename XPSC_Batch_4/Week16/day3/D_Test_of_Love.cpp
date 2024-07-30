@@ -1,6 +1,5 @@
 /**
  *    author:  Mohammad Jashim Uddin
- *    2024-07-17 23:14:19
  **/
 #include <iostream>
 #include <bits/stdc++.h>
@@ -24,37 +23,37 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n;
-        cin >> n;
-        string str, str1;
-        cin >> str;
-        char ch;
-        if (str[0] == '9')
+        ll n, m, k;
+        cin >> n >> m >> k;
+        string s;
+        cin >> s;
+        vector<ll> dp(n + 2, -1);
+        dp[0] = k;
+        for (int i = 1; i <= n + 1; i++)
         {
-            vector<char> v(n + 1, '1');
-            for (int i = n; i >= 1; i--)
+            if (i != n + 1 && s[i - 1] == 'C')
             {
-                if (str[i - 1] <= v[i])
-                {
-                    ch = v[i] - str[i - 1] + '0';
-                }
-                else
-                {
-                    ch = v[i] - str[i - 1] + 10 + '0';
-                    v[i - 1] -= 1;
-                }
-                str1 = ch + str1;
+                continue;
             }
-            cout << str1 << endl;
+            for (int t = 1; t <= m; t++)
+            {
+                if (i - t >= 0 && (i - t == 0 || s[i - t - 1] == 'L'))
+                {
+                    dp[i] = max(dp[i], dp[i - t]);
+                }
+            }
+            if (i > 1 && s[i - 2] == 'W')
+            {
+                dp[i] = max(dp[i], dp[i - 1] - 1);
+            }
+        }
+        if (dp[n + 1] >= 0)
+        {
+            cout << "YES\n";
         }
         else
         {
-            for (int i = 0; i < n; i++)
-            {
-                ch = ('9' - str[i]) + '0';
-                str1 += ch;
-            }
-            cout << str1 << endl;
+            cout << "NO\n";
         }
     }
     return 0;

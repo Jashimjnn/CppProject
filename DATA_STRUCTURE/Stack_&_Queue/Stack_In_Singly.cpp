@@ -37,17 +37,17 @@ public:
     void pop()
     {
         sz--;
-        if(head==NULL)
+        if (head == NULL)
         {
             return;
         }
-        Node* dnd = head;
+        Node *dnd = head;
         head = head->next;
         delete dnd;
     }
     ll top()
     {
-        if(head==NULL)
+        if (head == NULL)
         {
             return 0;
         }
@@ -59,7 +59,7 @@ public:
     }
     bool empty()
     {
-        if(sz==0)
+        if (sz == 0)
         {
             return true;
         }
@@ -73,20 +73,20 @@ int main()
 {
     myStack st;
     ll n;
-    cin>>n;
-    while(n--)
+    cin >> n;
+    while (n--)
     {
         ll x;
-        cin>>x;
+        cin >> x;
         st.push(x);
     }
-    cout<<st.size()<<endl;
-    while(!st.empty())
+    cout << st.size() << endl;
+    while (!st.empty())
     {
         ll x = st.top();
         st.pop();
-        cout<<x<<" ";
+        cout << x << " ";
     }
-    cout<<endl;
+    cout << endl;
     return 0;
 }
