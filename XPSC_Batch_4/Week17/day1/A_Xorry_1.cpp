@@ -1,6 +1,6 @@
 /**
  *    author:  Mohammad Jashim Uddin
- **/
+**/
 #include <iostream>
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -17,30 +17,30 @@ typedef long long ll;
 template <typename T>
 using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-
 int main()
 {
     ll t;
     cin >> t;
     while (t--)
     {
-        ll n, k;
-        cin >> n >> k;
-        deque<ll>dq(n*k);
-        for (auto &i : dq)
+        ll n;
+        cin >> n;
+        ll a = 1;
+        ll b = 0;
+        ll cnt = 0;
+        while (a * 2 <= n)
         {
-            cin >> i;
+            a *= 2;
+            cnt++;
         }
-        ll x = ceil(n / 2.0);
-        ll sum = 0;
-        ll s = (x - 1) * k;
-        ll y = n - x + 1;
-
-        for (int i = s; i < n * k; i += y)
+        for (int i = cnt - 1; i >= 0; i--)
         {
-            sum += dq[i];
+            if (n & 1 << i)
+            {
+                b = b | (1<< i);
+            }
         }
-        cout << sum << endl;
+        cout<<b<<" "<<a<<endl;
     }
     return 0;
 }
