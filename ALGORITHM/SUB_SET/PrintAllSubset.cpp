@@ -41,16 +41,37 @@ int main()
     {
         cin >> v[i];
     }
+    ll tar;
+    cin>>tar;
     sort(begin(v), end(v));
     vector<ll> v1;
+    vector<vector<ll>>path;
+    vector<ll>p;
     Sub_set(v, 0, v1,n);
     for (auto subset : ans)
     {
+        ll sum=0;
         for (auto elem : subset)
         {
-            cout << elem << " ";
+            //cout << elem << " ";
+            sum+=elem;
+            p.push_back(elem);
         }
-        cout << endl;
+        if(sum==tar)
+        {
+            path.push_back(p);
+        }
+        sum=0;
+        p.clear();
+        //cout << endl;
+    }
+    for(auto e:path)
+    {
+        for(auto x:e)
+        {
+            cout<<x<<" ";
+        }
+        cout<<endl;
     }
     return 0;
 }
